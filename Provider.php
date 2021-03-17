@@ -78,4 +78,17 @@ class Provider extends AbstractProvider
             'grant_type' => 'authorization_code',
         ]);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getCodeFields($state = null)
+    {
+        $fields = parent::getCodeFields($state = null);
+
+        $fields['prompt'] = 'consent';
+        $fields['access_type'] = 'offline';
+
+        return $fields;
+    } 
 }
