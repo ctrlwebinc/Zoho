@@ -84,7 +84,7 @@ class Provider extends AbstractProvider
      */
     protected function getCodeFields($state = null)
     {
-        $fields = parent::getCodeFields($state = null);
+        $fields = parent::getCodeFields($state);
 
         $fields['prompt'] = 'consent';
         $fields['access_type'] = 'offline';
